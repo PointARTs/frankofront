@@ -10,6 +10,8 @@ import './Assets/css/libs/bootstrap-icons.css'
 import './Assets/css/libs/fontawesome-icons.css'
 import {configSurveysFromStorage} from "./store/surveyStore";
 import {configQuestionFromStorage} from "./store/questionStore";
+import Header from "./Components/Header";
+import {BurgerMenu} from "./Components/BurgerMenu";
 
 
 function App() {
@@ -58,25 +60,13 @@ function App() {
       <div className="nk-app-root">
         <div className="nk-main ">
           <div className="nk-wrap ">
-            <div className="nk-header nk-header-fixed is-light">
-              <div className="container-lg wide-xl">
-                <div className="nk-header-wrap">
-                  <div className="nk-header-brand">
-                    <Link to="/" className="logo-link">
-                      <img className="logo-light logo-img" src="./assets/images/logo.png" alt="logo" />
-                    </Link>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
+            <Header />
 
 
             <div className="nk-content ">
               <div className="container wide-xl">
                 <div className="nk-content-inner">
-
+                  <BurgerMenu />
 
                   <div className="nk-content-body">
                     <div className="nk-content-wrap">

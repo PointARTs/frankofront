@@ -5,7 +5,7 @@ function PageOutlet() {
 
     return (
         <>
-            <div className="nk-block-head nk-block-head-lg">
+            <div className="nk-block-head nk-block-head-lg my-5">
                 <div className="nk-block-between-md g-4">
                     <div className="nk-block-head-content">
                         <h2 className="nk-block-title fw-normal">Ласкаво просимо, у <b>FrankoClinic</b></h2>

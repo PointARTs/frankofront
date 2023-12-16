@@ -1,4 +1,3 @@
-import '../css/file2.css'
 import {useDispatch, useSelector} from 'react-redux';
 import {getBirthday, getDate, getFullName, questionsHealth} from "../../Helper/helper";
 import {useEffect} from "react";
