@@ -3,6 +3,49 @@ import { useDispatch, useSelector } from 'react-redux';
 import {useEffect} from "react";
 import {configCompleteStep, firstStepTrue} from "../../store/userStore";
 
+
+const stepsMenu = [
+    {
+       title: 'Інформована згода',
+        icon: 'ni-check-c',
+        iconActive: 'ni-check-fill-c',
+        link: '/reg/1',
+        stepName : 's_1'
+    },
+
+    {
+        title: 'Персональна інформація',
+        icon: 'ni-user-c',
+        iconActive: 'ni-user-fill-c',
+        link: '/reg/2',
+        stepName : 's_2'
+    },
+
+    {
+        title: 'Анкета про стан здоров’я',
+        icon: 'ni-heart',
+        iconActive: 'ni-heart-fill',
+        link: '/reg/3',
+        stepName : 's_3'
+    },
+
+    {
+        title: 'Анкета опитувальник',
+        icon: 'ni-list-thumb',
+        iconActive: 'ni-list-thumb-fill',
+        link: '/reg/4',
+        stepName : 's_4'
+    },
+
+    {
+        title: 'Підтвердження',
+        icon: 'ni-edit-alt',
+        iconActive: 'ni-edit-alt-fill',
+        link: '/reg/5',
+    },
+
+    ]
+
 function StepsBar() {
     const steps = useSelector(state => state.user.steps)
     const user = useSelector(state => state.user)
@@ -46,51 +89,20 @@ function StepsBar() {
                                                     <h6 className="overline-title">Кроки</h6>
                                                 </li>
 
+                                                {
+                                                    stepsMenu.map((e, key)=>{
+                                                        return <li className="nk-menu-item" key={key}>
+                                                            <Link to={e.link} className={steps[e.stepName] ? "nk-menu-link text-success" : 'nk-menu-link'}>
+                                                                <span className="nk-menu-icon">
+                                                                  <em className={steps[e.stepName] ? `icon ni ${e.iconActive} text-success` : `icon ni ${e.icon}`}></em>
+                                                                </span>
+                                                                <span className="nk-menu-text">{e.title}</span>
+                                                                {user.step === key+1 && <span className="nk-menu-text">•</span>}
+                                                            </Link>
+                                                        </li>
+                                                    })
+                                                }
 
-                                                <li className="nk-menu-item">
-                                                    <Link to="/reg/1" className={steps.s_1 ? "nk-menu-link text-success" : 'nk-menu-link'}>
-                                                        <span className="nk-menu-icon">
-                                                          <em className={steps.s_1 ? "icon ni ni-check-fill-c text-success" : 'icon ni ni-check-c'}></em>
-                                                        </span>
-                                                        <span className="nk-menu-text">Інформована згода</span>
-                                                    </Link>
-                                                </li>
-
-                                                <li className="nk-menu-item">
-                                                    <Link to="/reg/2" className={steps.s_2 ? "nk-menu-link text-success" : 'nk-menu-link'}>
-                                                        <span className="nk-menu-icon">
-                                                          <em className={steps.s_2 ? "icon ni ni-user-fill-c text-success" : 'icon ni ni-user-c'}></em>
-                                                        </span>
-                                                        <span className="nk-menu-text">Заповніть форму</span>
-                                                    </Link>
-                                                </li>
-
-                                                <li className="nk-menu-item">
-                                                    <Link to="/reg/3" className={steps.s_3 ? "nk-menu-link text-success" : 'nk-menu-link'}>
-                                                        <span className="nk-menu-icon">
-                                                          <em className={steps.s_3 ? "icon ni ni-heart-fill text-success" : 'icon ni ni-heart'}></em>
-                                                        </span>
-                                                        <span className="nk-menu-text">Анкета про стан здоров’я</span>
-                                                    </Link>
-                                                </li>
-
-                                                <li className="nk-menu-item">
-                                                    <Link to="/reg/4" className={steps.s_4 ? "nk-menu-link text-success" : 'nk-menu-link'}>
-                                                        <span className="nk-menu-icon">
-                                                          <em className={steps.s_4 ? "icon ni ni-list-thumb-fill text-success" : 'icon ni ni-list-thumb'}></em>
-                                                        </span>
-                                                        <span className="nk-menu-text">Анкета опитувальник</span>
-                                                    </Link>
-                                                </li>
-
-                                                <li className="nk-menu-item">
-                                                    <Link to="/reg/5" className="nk-menu-link">
-                                                        <span className="nk-menu-icon">
-                                                          <em className="icon ni ni-edit-alt"></em>
-                                                        </span>
-                                                        <span className="nk-menu-text">Підтвердження</span>
-                                                    </Link>
-                                                </li>
 
 
 

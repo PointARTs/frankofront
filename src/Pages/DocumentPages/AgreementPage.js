@@ -1,4 +1,3 @@
-import '../css/file1.css'
 import { useSelector} from 'react-redux';
 
 function AgreedmentPage() {

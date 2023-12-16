@@ -1,4 +1,3 @@
-import '../css/file2.css'
 import { useSelector} from 'react-redux';
 import {getFullName} from "../../Helper/helper";
 

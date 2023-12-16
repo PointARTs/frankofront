@@ -8,21 +8,36 @@ import {useEffect, useState} from "react";
 
 export function FormAgree(){
     const dispatch = useDispatch()
-    const steps = useSelector(state => state.user.steps)
-    const confirmAgree = useSelector(state => state.user.confirmAgree)
+    const {confirmAgree, steps} = useSelector(state => state.user)
     const [buttonNext, setButtonNext] = useState(false)
     const navigate = useNavigate()
 
     const nextStepHandler = () => {
-        dispatch(completeStep('1'))
-        dispatch(nextStep())
-        navigate('/reg/2')
+
+        if (buttonNext && !steps.s_1){
+            dispatch(completeStep('1'))
+            dispatch(nextStep())
+        }
+
+        if (buttonNext){
+            navigate('/reg/2')
+        }
+
     }
 
     useEffect(()=>{
+        let status = 0
         for (const [_, val] of Object.entries(confirmAgree)){
-            val ? setButtonNext(true) : setButtonNext(false)
+             !val && status++
         }
+
+        if (status > 0){
+            setButtonNext(false)
+        } else
+        {
+            setButtonNext(true)
+        }
+
     },[confirmAgree])
 
     return(
@@ -59,7 +74,7 @@ export function FormAgree(){
                         <div className="preview-block">
                             <div className="row gy-4">
                                 <div className="form-group">
-                                    <div className="btn btn-lg btn-primary" onClick={!steps.s_1 && nextStepHandler}>Наступний Крок</div>
+                                    <div className="btn btn-lg btn-primary" onClick={nextStepHandler}>Наступний Крок</div>
                                 </div>
                             </div>
                         </div>

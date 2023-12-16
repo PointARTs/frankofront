@@ -4,6 +4,7 @@ import {configUserFromStorage} from "../../store/userStore";
 import {useEffect} from "react";
 import {configSurveysFromStorage} from "../../store/surveyStore";
 import {configQuestionFromStorage} from "../../store/questionStore";
+import '../../Pages/css/file1.css'
 
 
 function PageOutlet() {

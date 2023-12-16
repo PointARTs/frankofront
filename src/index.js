@@ -109,6 +109,10 @@ const router = createBrowserRouter([
     {
         path: "/agreement",
         element: <PrintOutlet />,
+        loader: () => {
+            document.title = 'Інформована згода на попередній огляд та консультацію | Frankolab'
+            return null
+        },
 
         children: [
 
@@ -128,6 +132,10 @@ const router = createBrowserRouter([
     {
         path: "/survey",
         element: <PrintOutlet />,
+        loader: () => {
+            document.title = 'Aнкета опитувальник для пацієнта | Frankolab'
+            return null
+        },
 
         children: [
 
@@ -146,6 +154,11 @@ const router = createBrowserRouter([
     {
         path: "/health",
         element: <PrintOutlet />,
+
+        loader: () => {
+            document.title = 'Анкета про стан здоров’я | Frankolab'
+            return null
+        },
 
         children: [
 

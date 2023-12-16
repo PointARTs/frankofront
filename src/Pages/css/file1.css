@@ -1,12 +1,47 @@
-body{
-    background: #e5e5e5;
+.logo{
+    width: 200px;
+    height: 150px;
+    padding: 30px 0px;
 }
 
-.print-wrapper{
-    max-width: 60vw;
-    min-width: 1200px;
-    margin-left: 20vw;
+
+.date-line{
+    padding: 0 12px;
+    border-bottom: 1px solid;
 }
+
+.name-line{
+    padding: 0 20px;
+    border-bottom: 1px solid;
+}
+
+
+.signature-user{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+
+.sign-value{
+    min-width: 160px;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+}
+
+
+.print-wrapper{
+    width: 1200px;
+    margin: 0 20px;
+}
+
+@media screen and (min-width: 1200px){
+    .print-wrapper{
+        margin: 0 calc((100vw - 1200px)/ 2);
+    }
+}
+
+
 
 .agree-document{
     font-family: "Times New Roman", Times, serif!important;
@@ -50,7 +85,8 @@ body{
 
 
 .agree-document h1{
-    font-size: 2em;
+    font-family: "Times New Roman", Times, serif!important;
+    font-size: 16pt;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
@@ -103,6 +139,65 @@ body{
     .sign-value{
         min-width: 160px!important;
     }
+
+    .data-user a:first-child {
+        flex-grow: 0;
+    }
+
+    .agree-document .table > :not(caption) > * > * {
+        padding: 0 0!important;
+        font-size: 10pt;
+    }
+
+    .agree-document .table th {
+        min-width: 40px;
+    }
+
+    .agree-document .table td:first-child, .table th:first-child {
+        padding-left: .5rem!important;
+    }
+
+    .data-user a {
+        font-size: 10pt!important;
+    }
+
+    a.date {
+        font-size: 10pt!important;
+    }
+
+    .agree-document .table-row-name {
+        width: 50%!important;
+        line-height: normal!important;
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 5px!important;
+    }
+
+    .agree-document .table-advanced-checkbox {
+        padding: 0 5pt;
+    }
+
+    .table td:first-child, .table th:first-child {
+        padding: 0!important;
+    }
+
+    .agree-document .table-bordered td, .table-bordered th {
+        padding: 0px!important;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+
+    .agree-document .table-advanced-checkbox a {
+        font-size: 10pt!important;
+    }
+
+    .agree-document .default-font, .default-font a, .default-font p, .default-font span, .default-font div {
+        font-size: 10pt!important;
+        font-family: "Times New Roman", Times, serif!important;
+        line-height: normal!important;
+    }
+
+
 }
 
 .header-block{
@@ -117,10 +212,9 @@ body{
     flex-direction: column;
 }
 
-.logo{
-    width: 200px;
-    height: 150px;
-    padding: 30px 0px;
+.logo-2{
+    width: 142px;
+    padding: 14px 0px;
 }
 
 .title_name{
@@ -135,19 +229,20 @@ body{
 
 .date-line{
     padding: 0 12px;
-    border-bottom: 1px solid;
+    border-bottom: 0.5px solid;
 }
 
 .name-line{
     padding: 0 20px;
-    border-bottom: 1px solid;
+    border-bottom: 0.5px solid;
 }
 
 
-.signature-user{
+.signature-user-2{
     display: flex;
-    justify-content: space-between;
-    padding: 30px 0;
+    flex-direction: column;
+    padding: 10px 0;
+    align-items: center;
 }
 .sign{
     display: flex;
@@ -156,8 +251,8 @@ body{
 }
 
 .sign-value{
-    min-width: 160px;
-    border-bottom: 1px solid #000000;
+    min-width: 250px;
+    border-bottom: 0.5px solid #000000;
     text-align: center;
 }
 
@@ -165,8 +260,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
+
 .sign-value-1{
     padding-top: 26px;
 }
@@ -182,4 +277,135 @@ body{
 .block-2{
     color: black;
 }
+
+.data-user{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    align-items: center;
+}
+
+.data-user a:first-child {
+    flex-grow: 0.7;
+}
+
+
+.box-table-doc{
+    display: flex;
+    gap: 20px;
+}
+
+.box-table-doc table{
+    flex-grow: 0.5;
+}
+
+.input-block{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-block.margin{
+    margin-top: 20px;
+}
+
+.input-title-doc{
+    line-height: normal;
+}
+
+.input-block a {
+    font-size: 10pt!important;
+}
+
+.input-value-doc{
+    width: 100%;
+    min-height: 23px;
+    padding-top: 5px;
+    font-weight: bold;
+    border-bottom: 1pt dashed #afafaf;
+}
+
+.table th {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.table-advanced-checkbox {
+    display: inline-flex;
+    column-gap: 13px;
+}
+
+.table-advanced-checkbox div {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.answer-row{
+    width: 180px!important;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.agree-document .table-number-row{
+    width: 20px!important;
+}
+
+.agree-document .default-font, .default-font a, .default-font p, .default-font span, .default-font div {
+    font-size: 12pt!important;
+    font-family: "Times New Roman", Times, serif!important;
+    line-height: normal!important;
+}
+
+.agree-document .default-font.italic{
+    font-style: italic;
+}
+
+.user-info-full{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.user-info-full .block-info{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.user-info-full .block-info .user-value{
+    border-bottom: 0.5px dashed #727272;
+    flex-grow: 1;
+    padding-bottom: 4px;
+}
+
+.table-advanced-checkbox-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.table-row-line{
+    border-bottom: 0.5px dashed;
+    width: 100%;
+    padding: 10px 0 !important;
+    margin-bottom: 5px;
+}
+
+td.table-row-name {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+td.table-number-row {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+
+
 
