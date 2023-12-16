@@ -1,0 +1,185 @@
+body{
+    background: #e5e5e5;
+}
+
+.print-wrapper{
+    max-width: 60vw;
+    min-width: 1200px;
+    margin-left: 20vw;
+}
+
+.agree-document{
+    font-family: "Times New Roman", Times, serif!important;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background: white;
+    padding: 100px;
+
+}
+
+.agree-document a {
+    font-family: "Times New Roman", Times, serif!important;
+    color: black!important;
+    font-size: 12pt!important;
+}
+
+.agree-document p {
+    font-family: "Times New Roman", Times, serif!important;
+    color: black!important;
+    font-size: 12pt!important;
+}
+
+.agree-document span{
+    font-family: "Times New Roman", Times, serif!important;
+    color: black!important;
+    font-size: 12pt!important;
+}
+
+.agree-document h4{
+    font-family: "Times New Roman", Times, serif!important;
+    color: black;
+}
+
+.agree-document h6{
+    font-family: "Times New Roman", Times, serif!important;
+    color: black;
+}
+
+
+.agree-document h1{
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.agree-document h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+@media print {
+
+    .print-wrapper{
+        max-width: 100%;
+        margin-left: 0;
+        min-width: 100%;
+    }
+
+    .nk-block-between{
+        display: none;
+    }
+    body{
+        background: none!important;
+        padding: 0!important;
+    }
+    .title_name{
+        font-size: large;
+    }
+
+    .agree-document{
+        display: block;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: none;
+        padding: 10px 25px 10px 25px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .sign-value{
+        min-width: 160px!important;
+    }
+}
+
+.header-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.block-1{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 200px;
+    height: 150px;
+    padding: 30px 0px;
+}
+
+.title_name{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.content {
+    padding-top: 20px;
+}
+
+.date-line{
+    padding: 0 12px;
+    border-bottom: 1px solid;
+}
+
+.name-line{
+    padding: 0 20px;
+    border-bottom: 1px solid;
+}
+
+
+.signature-user{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+.sign{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.sign-value{
+    min-width: 160px;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+}
+
+.sign-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.sign-value-1{
+    padding-top: 26px;
+}
+
+.sign-desc{
+    font-size: small!important;
+}
+
+.signature-doc-title{
+    padding: 30px 0;
+}
+
+.block-2{
+    color: black;
+}
+
