@@ -28,11 +28,9 @@ export function FormUser(){
     });
 
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
 
-    const user = useSelector(state => state.user.user)
-    const steps = useSelector(state => state.user.steps)
+    const {user, steps} = useSelector(state => state.user)
 
     const onSubmit = data =>
     {
@@ -42,8 +40,6 @@ export function FormUser(){
             dispatch(setStep(3))
             dispatch(uncompleteStep('3'))
         }
-
-        console.log(user.gender, ' - ', data.gender)
 
         if(Object.entries(errors).length === 0 && !steps.s_2){
             console.log(errors)

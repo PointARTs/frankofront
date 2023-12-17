@@ -1,199 +1,9 @@
 import { useSelector} from 'react-redux';
-import {getFullName} from "../../Helper/helper";
+import {getFullName, questionsSurvey} from "../../Helper/helper";
 
 function SurveyDocumentPage() {
     const user = useSelector(state => state.user.user)
     const surveyAnswer = useSelector(state => state.survey.survey)
-
-    const questions = {
-
-        block_1: [
-            {
-                id: "surv1",
-                title: "напади ядухи",
-                input: false
-            },
-            {
-                id: "surv2",
-                title: "задишки чи тяжкого дихання",
-                input: false
-            },
-            {
-                id: "surv3",
-                title: "задушливого кашлю",
-                input: false
-            },
-            {
-                id: "surv4",
-                title: "періодичні хрипи (свисти), які чути на відстані",
-                input: false
-            },
-            {
-                id: "surv5",
-                title: "часту чи постійну закладеність носа",
-                input: false
-            },
-            {
-                id: "surv6",
-                title: "виділення з носа без простуди",
-                input: false
-            },
-            {
-                id: "surv7",
-                title: "свербіння та / або почервоніння очей",
-                input: false
-            },
-            {
-                id: "surv8",
-                title: "свербіння та / або почервоніння  повік",
-                input: false
-            },
-            {
-                id: "surv9",
-                title: "свербіння та / або почервоніння  носа",
-                input: false
-            },
-            {
-                id: "surv10",
-                title: "цілорічно",
-                input: false
-            },
-            {
-                id: "surv11",
-                title: "чи у весняно-літній період",
-                input: false
-            },
-            {
-                id: "surv12",
-                title: "висипи на шкірі",
-                input: false
-            },
-            {
-                id: "surv13",
-                title: "її почервоніння",
-                input: false
-            },
-            {
-                id: "surv14",
-                title: "набряки шкіри",
-                input: false
-            },
-            {
-                id: "surv15",
-                title: "відчуття свербежу шкіри",
-                input: false
-            },
-            {
-                id: "surv16",
-                title: "болі у животі",
-                input: false
-            },
-            {
-                id: "surv17",
-                title: "нудота",
-                input: false
-            },
-            {
-                id: "surv18",
-                title: "часті діареї",
-                input: false
-            },
-            {
-                id: "surv19",
-                title: "втрата свідомості",
-                input: false
-            },
-            {
-                id: "surv20",
-                title: "зниження артеріального тиску",
-                input: false
-            },
-            {
-                id: "surv21",
-                title: "ускладнення дихання",
-                input: false
-            },
-            {
-                id: "surv22",
-                title: "інше",
-                input: false
-            }
-        ],
-
-        block_2: [
-            {
-                id: "surv23",
-                title: "лікарські засоби",
-                input: false
-            },
-            {
-                id: "surv24",
-                title: "харчових продуктів",
-                input: false
-            },
-            {
-                id: "surv25",
-                title: "побутової хімії",
-                input: false
-            },
-            {
-                id: "surv26",
-                title: "контакту з різними речовинами на виробництві",
-                input: false
-            },
-            {
-                id: "surv27",
-                title: "інші речовини",
-                input: true,
-                placeholder: 'Зазначте їх назву'
-            }
-        ],
-
-        block_3: [
-            {
-                id: "surv28",
-                title: "бронхіальна астма",
-                input: false
-            },
-            {
-                id: "surv29",
-                title: "алергічний риніт",
-                input: false
-            },
-            {
-                id: "surv30",
-                title: "алергічний дерматит",
-                input: false
-            },
-            {
-                id: "surv31",
-                title: "інші алергічні захворювання",
-                input: false
-            },
-            {
-                id: "surv32",
-                title: "небезпечні реакції на укуси комах",
-                input: false
-            }
-
-        ],
-
-        block_4: [
-            {
-                id: "surv33",
-                title: "Чи є у Вам інші хронічні захворювання?",
-                input: true,
-                placeholder: 'Вкажіть їх, особливо автоімунні, хвороби нирок, печінки і жовчного міхура, шлунку і кишківника, підшлункової залози, щитовидної залози'
-            },
-            {
-                id: "surv34",
-                title: "Чи існують харчові продукти, харчові домішки, які Ви не переносите",
-                input: true,
-                placeholder: 'Вкажіть їх'
-            }
-        ]
-
-    }
 
     const getDate = () => {
         const month = ['січня', 'лютого', "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"]
@@ -227,7 +37,7 @@ function SurveyDocumentPage() {
                 <a className="date">«<span className='date-line fw-medium'>{getDate().day}</span>»<span className='date-line'>{getDate().month}</span> {getDate().year} р.</a>
             </div>
             <div className="data-user">
-                <a>Прізвище, ім’я, по батькові:<br/>{getFullName()}</a>
+                <a>Прізвище, ім’я, по батькові:<br/>{getFullName(user)}</a>
                 <a>Дата народження: {getBirthday()}</a>
                 <a>Cтать: {user.gender}</a>
             </div>
@@ -243,7 +53,7 @@ function SurveyDocumentPage() {
                     </thead>
                     <tbody>
                         {
-                            questions.block_1.slice(0, questions.block_1.length / 2).map((e)=>{
+                            questionsSurvey.block_1.slice(0, questionsSurvey.block_1.length / 2).map((e)=>{
                                 return <tr><td>{e.title}</td><th scope="row">{surveyAnswer && surveyAnswer[e.id]}</th></tr>
                             })
                         }
@@ -259,7 +69,7 @@ function SurveyDocumentPage() {
                     </thead>
                     <tbody>
                         {
-                            questions.block_1.slice(questions.block_1.length / 2).map((e)=>{
+                            questionsSurvey.block_1.slice(questionsSurvey.block_1.length / 2).map((e)=>{
                                 return <tr><td>{e.title}</td><th scope="row">{surveyAnswer && surveyAnswer[e.id]}</th></tr>
                             })
                         }
@@ -277,7 +87,7 @@ function SurveyDocumentPage() {
                     </thead>
                     <tbody>
                     {
-                        questions.block_2.map((e)=>{
+                        questionsSurvey.block_2.map((e)=>{
                             return <tr><td>{e.title}</td><th scope="row">{surveyAnswer && surveyAnswer[e.id]}</th></tr>
                         })
                     }
@@ -293,7 +103,7 @@ function SurveyDocumentPage() {
                     </thead>
                     <tbody>
                     {
-                        questions.block_3.map((e)=>{
+                        questionsSurvey.block_3.map((e)=>{
                             return <tr><td>{e.title}</td><th scope="row">{surveyAnswer && surveyAnswer[e.id]}</th></tr>
                         })
                     }
