@@ -51,7 +51,7 @@ function SurveyDocumentPage() {
             <div className="default-font user-info-full py-5">
                 <div className="block-info">
                     <a>Прізвище, ім'я, по батькові</a>
-                    <span className="user-value">{getFullName()}</span>
+                    <span className="user-value">{getFullName(user)}</span>
                 </div>
                 <div className="block-info">
                     <a>Дата народження</a>

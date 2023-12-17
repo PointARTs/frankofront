@@ -37,9 +37,11 @@ export function InputDataPicker ({name, icon, size, title, control, required = f
                             required: {required},
                         }}
                         render={({ field }) => (
-                            <DatePicker wrapperClassName="form-control" className="form-control" onChange={field.onChange} selected={field.value} value={field.value} calendarClassName={"datepicker-days"} dateFormat={'dd.MM.yyyy'} placeholderText={'Введіть дату народження'} required={required}/>
+                            <input type="date" className="form-control" onChange={field.onChange} selected={field.value} value={field.value} placeholderText={'Введіть дату народження'}/>
+                            // <DatePicker wrapperClassName="form-control" className="form-control" onChange={field.onChange} selected={field.value} value={field.value} calendarClassName={"datepicker-days"} dateFormat={'dd.MM.yyyy'} placeholderText={'Введіть дату народження'} required={required}/>
                         )}
                     />
+
 
                     {err && <span id="fv-full-name-error" className="invalid">{err[name]?.message}</span>}
                 </div>
